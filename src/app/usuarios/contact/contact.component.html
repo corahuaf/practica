@@ -1,22 +1,39 @@
 
-<div class=" grid place-content-center pt-10 ">
+<div class=" grid place-content-center pt-20 ">
     <div class="flex justify-center">
-        <h1 class="mb-4 text-4xl font-extrabold text-gray-900">Contacto</h1>
+        <h1 class="mb-4 text-5xl font-extrabold text-gray-900">Contacto</h1>
     </div>
 
-    <div class="p-10 ">
-
-        <div class="mb-6">
-            <label for="default-input" class="block mb-2 text-sm font-medium text-gray-900 ">Nombre</label>
-            <input type="text" id="default-input" class="tamaño bg-gray-50 border border-gray-700 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500">
-        </div>
-        <div class="mb-6">
-            <label for="default-input" class="block mb-2 text-sm font-medium text-gray-900 ">Correo</label>
-            <input type="text" id="default-input" class="tamaño bg-gray-50 border border-gray-700 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500">
-        </div>
-        <div class="mb-6">
-            <label for="default-input" class="block mb-2 text-sm font-medium text-gray-900 ">Asunto</label>
-            <input type="text" id="default-input" class="tamaño bg-gray-50 border border-gray-700 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500">
+    <div class="p-10">
+        <form autocomplete="off" [formGroup]="formulario" (ngSubmit)="mostrarMensaje()">
+            <div class="mb-6">
+              <label for="nombre" class="block mb-2 text-sm font-medium text-gray-900 ">Nombre:</label>
+              <input formControlName="nombre" type="text" id="nombre" class=" tamaño bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:border-green-500 block w-full p-2.5">
+              <div *ngIf="campoNoEsValido('nombre')">
+                <p class="mt-2 text-sm text-red-600">Debe tener como mínimo 10 carácteres</p>
+              </div>
+            </div>
+      
+            <div class="mb-6">
+              <label for="email" class="block mb-2 text-sm font-medium text-gray-900 ">Email:</label>
+              <input formControlName="email" type="email" id="email" class="bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:border-green-500 block w-full p-2.5">
+              <div *ngIf="campoNoEsValido('email')">
+                <p class="mt-2 text-sm text-red-600">El email no es válido</p>
+              </div>
+            </div>
+      
+            <div class="mb-6">
+              <label for="message" class="block mb-2 text-sm font-medium text-gray-900">Mensaje:</label>
+              <textarea formControlName="mensaje" id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-400 focus:border-green-500 "></textarea>
+              <div *ngIf="campoNoEsValido('mensaje')">
+                <p class="mt-2 text-sm text-red-600">El mensaje no puede quedar vacío</p>
+              </div>
+            </div>
+      
+            <button [disabled]="formulario.invalid" type="submit" class="disabled:opacity-50 disabled:pointer-events-none text-white bg-green-700 hover:bg-green-800 focus:outline-none font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center">Confirmar</button>
+          </form>
+          <div *ngIf="mensajeValidos" class="p-4 mt-4 text-sm text-green-700 bg-green-100 rounded-md " role="alert">
+          <pre class="mt-4">{{formulario.value | json}}</pre>
         </div>
     
     </div>
