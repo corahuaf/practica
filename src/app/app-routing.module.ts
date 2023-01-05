@@ -7,8 +7,9 @@ import { Pag2Component } from './usuarios/pag2/pag2.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: HomeComponent
+    path: '',   
+    redirectTo: 'pag1', 
+    pathMatch: 'full'
   },
   {
     path: 'pag1',

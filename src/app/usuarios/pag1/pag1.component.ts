@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./pag1.component.css']
 })
 export class Pag1Component {
+  boton_pulsado: boolean = false;
 
+funcion(){
+   this.boton_pulsado = !this.boton_pulsado;
+}
 }
