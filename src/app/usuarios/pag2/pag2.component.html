@@ -1,3 +1,18 @@
-<ul *ngFor="let exp of experiencia" >
-    <li>{{exp.nombre}}</li>
-</ul>
+<div class="grid place-content-center">
+    <div class="flex justify-center">
+        <h1 class="mb-4 pt-20 text-5xl font-extrabold text-gray-900">Experiencia</h1>
+    </div>
+    <div class="grid grid-cols-2 px-40 pt-10 ">
+        <div>
+            <img class="h-auto max-w-lg" src="https://img.freepik.com/free-vector/developer-activity-concept-illustration_114360-2801.jpg?w=2000" alt="">
+        </div>
+        <div class="divide-y bg-slate-50 rounded-xl p-4">
+            <div *ngFor="let exp of experiencia">
+                <p class="text-2xl pt-7">{{exp.empresa}}</p>
+                <p class="text-xl text-green-600">{{exp.puesto}}</p>
+                <p class="text-md text-slate-400">{{exp.anioInicio}} - {{exp.anioFinal}}</p>
+                <p class="text pb-7">{{exp.descripcion}}</p>
+            </div>
+        </div>
+    </div>
+</div>

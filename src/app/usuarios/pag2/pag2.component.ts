@@ -8,12 +8,18 @@ import { Component } from '@angular/core';
 export class Pag2Component {
   experiencia = [
   {
-    nombre: "juan",
-    apellido: "as"
+    empresa: "Empresa 1",
+    puesto: "Desarrollador web",
+    anioInicio:2021,
+    anioFinal:2022,
+    descripcion:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias cum vel maiores facilis ipsa assumenda. Veritatis quas, asperiores quis laudantium iste eligendi, a voluptas incidunt, dolores error eius et illo!"
   },
   {
-    nombre: "ric",
-    apellido: "asw"
+    empresa: "Empresa 2",
+    puesto: "Desarrollador web",
+    anioInicio:2018,
+    anioFinal:2020,
+    descripcion:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias cum vel maiores facilis ipsa assumenda. Veritatis quas, asperiores quis laudantium iste eligendi, a voluptas incidunt, dolores error eius et illo!"
   }
   ];
 }
